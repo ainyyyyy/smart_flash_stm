@@ -29,8 +29,10 @@
 ******************************************************************************/
 #include "EPD_Test.h"
 #include "EPD_1in54_V2.h"
+#include "string.h"
 
-int EPD_test(char* buff)
+
+int EPD_test(char* buff,char* buff2,char* buff3,char* buff4,char* buff5)
 {
     printf("EPD_1in54_V2_test Demo\r\n");
     DEV_Module_Init();
@@ -66,11 +68,18 @@ int EPD_test(char* buff)
     //1.Select Image
     Paint_SelectImage(BlackImage);
     Paint_Clear(WHITE);
-
+		
     // 2.Drawing on the image
-    
-    Paint_DrawString_EN(5, 85, buff, &Font20, BLACK, WHITE);
-    Paint_DrawNum(5, 110, 123456789, &Font20, BLACK, WHITE);
+    Paint_DrawString_EN(5, 0, "Overwrites:", &Font20, WHITE, BLACK);
+    Paint_DrawString_EN(5, 20, buff5, &Font20, WHITE, BLACK);
+    Paint_DrawString_EN(5, 40, "Reliability,%:", &Font20, WHITE, BLACK);
+		Paint_DrawString_EN(5, 60, buff, &Font20, WHITE, BLACK);
+		Paint_DrawString_EN(5, 80, "Free Space:", &Font20, WHITE, BLACK);
+		Paint_DrawString_EN(5, 100, buff2, &Font20, WHITE, BLACK);
+		Paint_DrawString_EN(5, 120, "Used Space:", &Font20, WHITE, BLACK);
+		Paint_DrawString_EN(5, 140, buff3, &Font20, WHITE, BLACK);
+		Paint_DrawString_EN(5, 160, "Total Space:", &Font20, WHITE, BLACK);
+		Paint_DrawString_EN(5,180, buff4, &Font20, WHITE, BLACK);
 
 
     EPD_1IN54_V2_Display(BlackImage);

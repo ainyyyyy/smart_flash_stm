@@ -26,15 +26,15 @@ Project File Date:  05/12/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'EPD_2in13_V3_test'
+Build target 'EPD_1in54_V2_test'
 compiling main.c...
-../Src/main.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8_t *"
+../Src/main.c(250): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8_t *"
                 HAL_UART_Receive(&huart1, Dataa, sizeof Dataa, 10);
-../Src/main.c(285): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+../Src/main.c(290): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
           EPD_test(read_data,Dataa_fremem,Dataa_ocupmem,Dataa_totalmem,(uint8_t*)str2);
 ../Src/main.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=32564 RO-data=4840 RW-data=392 ZI-data=27992  
+Program Size: Code=32580 RO-data=4460 RW-data=384 ZI-data=27992  
 FromELF: creating hex file...
 "epd-demo\epd-demo.axf" - 0 Error(s), 2 Warning(s).
 
@@ -52,14 +52,14 @@ Package Vendor: Keil
                 STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
-  .\RTE\_EPD_2in13_V3_test
+  .\RTE\_EPD_1in54_V2_test
   C:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
   C:\Users\testcomputer\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

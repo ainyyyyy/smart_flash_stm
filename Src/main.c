@@ -16,8 +16,8 @@
   *
   ******************************************************************************
   */
-/* USER CODE END Header */
-/* Includes ------------------------------------------------------------------*/
+
+// connecting the necessary header files
 #include "main.h"
 #include "spi.h"
 #include "usart.h"
@@ -27,79 +27,34 @@
 #include "assert.h"
 #include "string.h"
 #include "stdio.h"
+
 #include "stdlib.h"
 #include "math.h"
 
 
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
+
 #include "EPD_Test.h"
 
-/* USER CODE END Includes */
 
-/* Private typedef -----------------------------------------------------------*/
+
 /* USER CODE BEGIN PTD */
+
 #define FLASH_STORAGE 0x080090F0
 #define page_size 0x800
 /* USER CODE END PTD */
-uint8_t rx_buffer[22];
-//int64_t convert_rx_buff;
-//int64_t rx_buffer1;
-float convert_rx_buff;
-float rx_buffer1;
+// declaring variables
+float convert_rx_buff; // Overwrites
+float rx_buffer1; 
 float rx_buffer2;
-//int64_t a;
 float a;
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
-
-/* USER CODE BEGIN PV */
-/* Private variables ---------------------------------------------------------*/
-
-/* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-/* USER CODE BEGIN PFP */
-/* Private function prototypes -----------------------------------------------*/
 
-/* USER CODE END PFP */
 
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
 
-char *uint64_to_string(int64_t input)
-{
-static char result[21] = "";
-// Clear result from any leftover digits from previous function call.
-memset(&result[0], 0, sizeof(result));
-// temp is used as a temporary result storage to prevent sprintf bugs.
-char temp[21] = "";
-char c;
-uint8_t base = 10;
-
-while (input)
-{
-int num = input % base;
-input /= base;
-c = '0' + num;
-
-sprintf(temp, "%c%s", c, result);
-strcpy(result, temp);
-}
-return result;
-}
-
-void save_to_flash(uint8_t *data)
+void save_to_flash(uint8_t *data) // saving data to flash memory
 {
 	volatile uint32_t data_to_FLASH[(strlen((char*)data)/4)	+ (int)((strlen((char*)data) % 4) != 0)];
 	memset((uint8_t*)data_to_FLASH, 0, strlen((char*)data_to_FLASH));
@@ -143,7 +98,7 @@ void save_to_flash(uint8_t *data)
 	  HAL_FLASH_Lock();
 }
 
-void read_flash(uint8_t* data)
+void read_flash(uint8_t* data) // reading data from flah memory
 {
 	volatile uint32_t read_data;
 	volatile uint32_t read_cnt=0;
@@ -162,95 +117,47 @@ void read_flash(uint8_t* data)
 }
 
 
-int64_t GetDifference(uint64_t first, uint64_t second) {
-    uint64_t abs_diff = (first > second) ? (first - second): (second - first);
-    assert(abs_diff<=INT64_MAX);
-    return (first > second) ? (int64_t)abs_diff : -(int64_t)abs_diff;
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
   * @retval int
   */
-char Dataa[50];
-char Dataa_per[20];
-char Dataa_fremem[15];
-char Dataa_ocupmem[15];
-char Dataa_totalmem[15];
-int cycle = 100000;
-float all = 100;
+// declaring variables
+char Dataa[50];  // received data
+char Dataa_per[20]; // string with information about overwrites
+char Dataa_fremem[15]; // string with information about free space
+char Dataa_ocupmem[15]; // string with information about used space
+char Dataa_totalmem[15]; // string with information about total space
+int cycle = 100000; // amount of overwrites
+float all = 100; // percentage
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-
-  /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
 
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_SPI1_Init();
-  /* USER CODE BEGIN 2 */
-
-  //EPD_test();
-
-
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-	//uint8_t str[] = "88888888 88888888 UART\r\n\0";
-	//char Datait[] = "Yaaaaaaaaaaaaay!)))) it";
-	//char Data[] = "Yaaaaaaaaaaaaay!))))\r";
 	
-	
-	
-	
+
 	  while (1)
   {
-    /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-	  while(!(USART1->SR & USART_SR_RXNE));
-		HAL_UART_Receive(&huart1, Dataa, sizeof Dataa, 10);
-	  HAL_Delay(100);
+	  while(!(USART1->SR & USART_SR_RXNE)); // waiting for data
+		HAL_UART_Receive(&huart1, Dataa, sizeof Dataa, 10); // writing a string to a variable 
+	  HAL_Delay(100); // Delay
 		
 		
-    char* piece = strtok(Dataa," ");
-		strcpy(Dataa_per,piece);
+    char* piece = strtok(Dataa," "); // splitting a string
+		strcpy(Dataa_per,piece);  
     piece = strtok(NULL, " ");
     strcpy(Dataa_fremem,piece);
 		piece = strtok(NULL, " ");
@@ -258,56 +165,34 @@ int main(void)
     piece = strtok(NULL, " ");
     strcpy(Dataa_totalmem,piece);
 	  
-		
-		//char* end;
-		a = atof(Dataa_per);
-	  //a = strtoull((char*)Dataa_per,&end,10);
+
+		a = atof(Dataa_per); // converting string to numeric
+		// calculations
 	  convert_rx_buff += fabs(a*1000 - rx_buffer2);
 		all-= fabs(a - rx_buffer1);
-//	  convert_rx_buff += 2345678901;
 	  rx_buffer1 = a;
 		rx_buffer2 = a*1000;
 	  uint8_t str1[20];
 		uint8_t str2[20];
-		//strcpy((char*)str1,uint64_to_string(convert_rx_buff));
-		sprintf((char*)str2,"%.3f", convert_rx_buff);
-		sprintf((char*)str1,"%.5f", all);
-	  //strcpy((char*)str1,uint64_to_string(convert_rx_buff));
+		sprintf((char*)str2,"%.3f", convert_rx_buff); // converting boolen to string
+		sprintf((char*)str1,"%.5f", all); // converting boolen to string
 	  memset(Dataa_per, 0, sizeof(Dataa_per));
 	  sprintf((char*)Dataa_per,"%s", (char*)str1);
-	  save_to_flash((uint8_t*)Dataa_per);
+	  save_to_flash((uint8_t*)Dataa_per); // saving data to flash memory
 	  memset(Dataa_per, 0, sizeof(Dataa_per));
 	  char read_data[20];
 	  memset(read_data, 0, sizeof(read_data));
-	  read_flash((uint8_t*)read_data);
+	  read_flash((uint8_t*)read_data); // reading data from flassh
 	  HAL_Delay(100);
-		strcat(read_data,"%");
-	  EPD_test(read_data,Dataa_fremem,Dataa_ocupmem,Dataa_totalmem,(uint8_t*)str2);
-	  HAL_Delay(100);
-		//while(!(USART1->SR & USART_SR_TC));
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)Dataa,20 ,30);
-	  HAL_Delay(100);
+		strcat(read_data,"%"); // concatenation 
+		strcat(Dataa_fremem,"GB");
+		strcat(Dataa_ocupmem,"GB");
+		strcat(Dataa_totalmem,"GB");
+	  EPD_test(read_data,Dataa_fremem,Dataa_ocupmem,Dataa_totalmem,(uint8_t*)str2); // data output to the display
+	  HAL_Delay(100); // Delay
   }
 	
 	
-    //while (1) {
-			//HAL_UART_Transmit(&huart1, (uint8_t *)1, 4, 0xFFFF);
-			//HAL_UART_Transmit(&huart1, str, 24, 30);
-			//HAL_UART_Transmit_IT(&huart1, Datait, sizeof Datait);
-			//HAL_UART_Transmit(&huart1, Data, sizeof Data, 5);
-			//if(HAL_UART_Receive(&huart1, Dataa, sizeof Dataa, 2000) != HAL_BUSY){
-			//	while( HAL_UART_Transmit(&huart1, Dataa, sizeof Dataa, 2000) == HAL_BUSY );
-			//}
-			/////////////////////while(!(USART1->SR & USART_SR_RXNE));
-			///////////////////////HAL_UART_Receive(&huart1, Dataa, sizeof Dataa, 100);
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-		//////////////////////HAL_Delay(1000);
-
-    //}
-		////////////////////////EPD_test(Dataa);
-  /* USER CODE END 3 */
 }
 
 /**
@@ -348,9 +233,6 @@ void SystemClock_Config(void)
   }
 }
 
-/* USER CODE BEGIN 4 */
-
-/* USER CODE END 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.
@@ -358,12 +240,12 @@ void SystemClock_Config(void)
   */
 void Error_Handler(void)
 {
-  /* USER CODE BEGIN Error_Handler_Debug */
+
     /* User can add his own implementation to report the HAL error return state */
     while(1) {
 			printf("_Error_Handler\r\n");
     }
-  /* USER CODE END Error_Handler_Debug */
+
 }
 
 #ifdef  USE_FULL_ASSERT

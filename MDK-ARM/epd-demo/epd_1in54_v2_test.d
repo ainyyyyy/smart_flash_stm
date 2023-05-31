@@ -36,3 +36,4 @@ epd-demo\epd_1in54_v2_test.o: ..\User\Examples\imagedata.h
 epd-demo\epd_1in54_v2_test.o: ..\User\Config\Debug.h
 epd-demo\epd_1in54_v2_test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 epd-demo\epd_1in54_v2_test.o: ..\User\e-Paper\EPD_1in54_V2.h
+epd-demo\epd_1in54_v2_test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

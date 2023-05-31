@@ -1,7 +1,7 @@
 Dependencies for Project 'epd-demo', Target 'EPD_1in54_V2_test': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f103xe.s)(0x643D5EEA)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_EPD_1in54_V2_test-IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\testcomputer\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F10X_HD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xe.lst --xref -o epd-demo\startup_stm32f103xe.o --depend epd-demo\startup_stm32f103xe.d)
-F (../Src/main.c)(0x645E5385)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\User\Config -I ..\User\e-Paper -I ..\User\Fonts -I ..\User\GUI -I ..\User\Examples-I.\RTE\_EPD_1in54_V2_test-IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\testcomputer\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o epd-demo\main.o --omf_browse epd-demo\main.crf --depend epd-demo\main.d)
+F (../Src/main.c)(0x64763D96)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\User\Config -I ..\User\e-Paper -I ..\User\Fonts -I ..\User\GUI -I ..\User\Examples-I.\RTE\_EPD_1in54_V2_test-IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\testcomputer\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o epd-demo\main.o --omf_browse epd-demo\main.crf --depend epd-demo\main.d)
 I (../Inc/main.h)(0x60AF72A2)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5F9BB385)
 I (../Inc/stm32f1xx_hal_conf.h)(0x60AF7088)
@@ -33,13 +33,16 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x602569C4)
 I (../Inc/spi.h)(0x60AF7088)
 I (../Inc/usart.h)(0x60AF7088)
 I (../Inc/gpio.h)(0x60AF7087)
-I (..\User\Examples\EPD_Test.h)(0x645E5191)
+I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x602569C4)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x602569C8)
+I (..\User\Examples\EPD_Test.h)(0x646B95A1)
 I (..\User\Config\DEV_Config.h)(0x60AF729D)
 I (..\User\GUI\GUI_Paint.h)(0x634D3F81)
 I (..\User\GUI\../Fonts/fonts.h)(0x5BD6A308)
 I (..\User\Examples\imagedata.h)(0x63513398)
 I (..\User\Config\Debug.h)(0x5BEFB7E6)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x602569C4)
 F (../Src/gpio.c)(0x60AF7087)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\User\Config -I ..\User\e-Paper -I ..\User\Fonts -I ..\User\GUI -I ..\User\Examples-I.\RTE\_EPD_1in54_V2_test-IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\testcomputer\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o epd-demo\gpio.o --omf_browse epd-demo\gpio.crf --depend epd-demo\gpio.d)
 I (../Inc/gpio.h)(0x60AF7087)
 I (../Inc/main.h)(0x60AF72A2)
@@ -100,7 +103,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5F9BB385)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x5F9BB385)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5F9BB385)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x602569C4)
-F (../Src/usart.c)(0x6446AFD9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\User\Config -I ..\User\e-Paper -I ..\User\Fonts -I ..\User\GUI -I ..\User\Examples-I.\RTE\_EPD_1in54_V2_test-IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\testcomputer\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o epd-demo\usart.o --omf_browse epd-demo\usart.crf --depend epd-demo\usart.d)
+F (../Src/usart.c)(0x647630F7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\User\Config -I ..\User\e-Paper -I ..\User\Fonts -I ..\User\GUI -I ..\User\Examples-I.\RTE\_EPD_1in54_V2_test-IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\testcomputer\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o epd-demo\usart.o --omf_browse epd-demo\usart.crf --depend epd-demo\usart.d)
 I (../Inc/usart.h)(0x60AF7088)
 I (../Inc/main.h)(0x60AF72A2)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5F9BB385)
@@ -194,8 +197,8 @@ I (..\User\Examples\ImageData.h)(0x63513398)
 F (..\User\Examples\ImageData2.c)(0x6351339F)()
 F (..\User\Examples\EPD_1in02_test.c)(0x6343EC2A)()
 F (..\User\Examples\EPD_1in54_test.c)(0x6342A325)()
-F (..\User\Examples\EPD_1in54_V2_test.c)(0x645E52F3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\User\Config -I ..\User\e-Paper -I ..\User\Fonts -I ..\User\GUI -I ..\User\Examples-I.\RTE\_EPD_1in54_V2_test-IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\testcomputer\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o epd-demo\epd_1in54_v2_test.o --omf_browse epd-demo\epd_1in54_v2_test.crf --depend epd-demo\epd_1in54_v2_test.d)
-I (..\User\Examples\EPD_Test.h)(0x645E5191)
+F (..\User\Examples\EPD_1in54_V2_test.c)(0x64760D27)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\User\Config -I ..\User\e-Paper -I ..\User\Fonts -I ..\User\GUI -I ..\User\Examples-I.\RTE\_EPD_1in54_V2_test-IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\testcomputer\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o epd-demo\epd_1in54_v2_test.o --omf_browse epd-demo\epd_1in54_v2_test.crf --depend epd-demo\epd_1in54_v2_test.d)
+I (..\User\Examples\EPD_Test.h)(0x646B95A1)
 I (..\User\Config\DEV_Config.h)(0x60AF729D)
 I (../Inc/main.h)(0x60AF72A2)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5F9BB385)
@@ -231,6 +234,7 @@ I (..\User\Examples\imagedata.h)(0x63513398)
 I (..\User\Config\Debug.h)(0x5BEFB7E6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x602569C4)
 I (..\User\e-Paper\EPD_1in54_V2.h)(0x645E538A)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x602569CE)
 F (..\User\Examples\EPD_1in54b_test.c)(0x6342A366)()
 F (..\User\Examples\EPD_1in54b_V2_test.c)(0x6342A390)()
 F (..\User\Examples\EPD_1in54c_test.c)(0x6342A3B0)()
@@ -246,7 +250,7 @@ F (..\User\Examples\EPD_2in9b_V3_test.c)(0x6342A48C)()
 F (..\User\Examples\EPD_2in9d_test.c)(0x6342A580)()
 F (..\User\Examples\EPD_2in13_test.c)(0x6342A5F2)()
 F (..\User\Examples\EPD_2in13_V2_test.c)(0x6342A643)()
-F (..\User\Examples\EPD_2in13_V3_test.c)(0x645E5196)()
+F (..\User\Examples\EPD_2in13_V3_test.c)(0x646B9916)()
 F (..\User\Examples\EPD_2in13b_V3_test.c)(0x6342A755)()
 F (..\User\Examples\EPD_2in13b_V4_test.c)(0x643D62DE)()
 F (..\User\Examples\EPD_2in13bc_test.c)(0x6342A784)()

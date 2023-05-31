@@ -580,7 +580,7 @@ ARM Macro Assembler    Page 9
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=epd-demo\startup_stm32f103xe.d -oepd-demo\startup_stm32f103xe.o -I
-.\RTE\_EPD_2in13_V3_test -IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CM
+.\RTE\_EPD_1in54_V2_test -IC:\Users\testcomputer\AppData\Local\Arm\Packs\ARM\CM
 SIS\5.8.0\CMSIS\Core\Include -IC:\Users\testcomputer\AppData\Local\Arm\Packs\Ke
 il\STM32F1xx_DFP\2.4.0\Device\Include --predefine="__MICROLIB SETA 1" --predefi
 
